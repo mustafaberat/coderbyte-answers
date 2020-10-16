@@ -21,3 +21,20 @@ function FindIntersection(strArr) {
 }
 
 console.log(FindIntersection(readline()));
+
+
+
+
+/*
+function FindIntersection(strArr) { 
+    var res = [], left = strArr[0].split(", "), right = strArr[1].split(", ")
+    res = (left.filter(leftNumber => right.find(rigthNumber => leftNumber === rigthNumber))).toString();
+    return res.length > 0 ? res : "false"; 
+}
+console.log(FindIntersection(readline()));
+
+
+// IN SINGLE LINE
+FindIntersection = (strArr, left = strArr[0].split(", "), right = strArr[1].split(", ")) => (left.filter(leftNumber => right.find(rigthNumber => leftNumber === rigthNumber))).toString().length > 0 ? (left.filter(leftNumber => right.find(rigthNumber => leftNumber === rigthNumber))).toString() : "false"; 
+console.log(FindIntersection(readline()));
+*/
