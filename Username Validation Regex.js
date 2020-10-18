@@ -23,3 +23,23 @@ function CodelandUsernameValidation(str = "", len = str.length) {
   }
      
   console.log(CodelandUsernameValidation(readline()));
+
+
+// ANOTHER OPTION:
+
+isLowerCase = (element) => element >= 'a' && element <= 'z'; 
+isUpperCase = (element) => element >= 'A' && element <= 'Z'; 
+isNumber = (element) => element >= '0' && element <= '9'; 
+
+function CodelandUsernameValidation(str) { 
+  var len = str.length;
+  if(len < 4 || len > 25) return false;
+  else if(!isLowerCase(str[0]) && !isUpperCase(str[0])) return false;
+  else if(str[len-1] === "_") return false;
+  for(let i=0; i<len; i++){
+    if(!isLowerCase(str[i]) && !isUpperCase(str[i]) && !isNumber(str[i]) && str[i] !== "_") return false;
+  }
+  return true; 
+}
+   
+console.log(CodelandUsernameValidation(readline()));
