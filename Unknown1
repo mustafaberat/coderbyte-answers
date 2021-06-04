@@ -1,0 +1,29 @@
+function solution(A, F, M) {
+    maxValidDice = 6;
+    lenOfA = A.length;
+    sumOfA = A.reduce((a,b)=>a+b,0)
+
+    sumOfResultMustBe = (M *  (lenOfA + F) - sumOfA)
+
+    if(sumOfResultMustBe <= (F*maxValidDice) && sumOfResultMustBe >= F){
+        returnResult = new Array(F).fill(1);
+        for(let i = 0; i<F; i++){
+            while(true){
+                // CONTROL END POINT
+                sumOfReturnResultArr = (returnResult.reduce((a,b)=>a+b,0))
+                if(sumOfReturnResultArr == sumOfResultMustBe){
+                    return returnResult;
+                } 
+                // END OF CONTROL
+
+                if(returnResult[i] < maxValidDice){
+                    returnResult[i] += 1;
+                } else{
+                    break;
+                }
+            }
+        }
+    }
+
+    return [0];
+}
